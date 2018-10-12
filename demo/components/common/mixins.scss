@@ -1,0 +1,44 @@
+@charset "utf-8";
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-float-breakpoint: 768px;
+$main-width:100%;
+$color1: #fde26f;
+$newcolor1: #F30E09;
+$btnColor:#f5be5d;
+$err:#B0071A;
+$bgcolor:#F9E07C;
+$newbgcolor:#F0C483;
+$newredgcolor:#FA0405;
+//font color
+$color2:#FAF9F9;
+$txtColor:#323232;
+$titColor:#7C171D;
+$yellow1:#fbd905;
+$blue1:#16276d;
+$color3:#376e82;
+$color4:#64828e;
+$color5:#aec3d8;
+
+// div color
+$headbg:#057a9f;
+$spanbg:#3fa1ae;
+// pixels to rems
+@function pxToRem($px) {
+    @return $px / 20 * 1rem;
+}
+@function ptr($px) {
+    @return $px / 20 * 1rem;
+}
+
+
+%keepline {
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+%radius8 {
+    border-radius: 8px;
+}

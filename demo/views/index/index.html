@@ -1,0 +1,73 @@
+<!--
+@require "index.js"
+-->
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>情满黄山 礼赢双节</title>
+  <link rel="import" href="../tpl/header/header.html?__inline">
+</head>
+
+<body>
+  <div id="app" :style="styleObject" class="index_main" v-cloak>
+    <div class="c_main">
+      <div class="btn_rule  " @click="showRulePop">
+        <img src="images/list_rule.png" alt="">
+      </div>
+      <div class="c_list c_w80 c_mtauto">
+        <div class="listIcon">
+          &nbsp;
+        </div>
+        <ul>
+          <li @click="goTolink('index',{eid:activityInfo.scanlotteryactivityId,status:activityInfo.scanStatus},'../anhui-scanCode/')">
+            <img src="images/list_btn1_1.png" alt="">
+          </li>
+          <li @click="goTolink('rankingList.html',{eid:activityInfo.scanlotteryactivityId,status:activityInfo.scanStatus},'../anhui-scanCode/')">
+            <img src="images/list_btn2.png" alt="">
+          </li>
+          <!-- <li @click="goTolink('index',{eid:activityInfo.lenternactivityId,status:activityInfo.lenternStatus},'../anhui-flower/')">
+            <img src="images/list_btn3.png" alt="">
+          </li> -->
+
+          <li @click="goTolink('rankingList.html',{game:2,eid:activityInfo.lenternactivityId,status:activityInfo.lenternStatus},'../anhui-flower/')">
+            <img src="images/list_btn3.png" alt="">
+          </li>
+
+          <li @click="goTolink('index',{eid:activityInfo.pluzzleactivityId,status:activityInfo.pluzzleStatus},'../2018pintu/')">
+            <img src="images/list_btn4.png" alt="">
+          </li>
+        </ul>
+      </div>
+
+      <transition name="popin">
+        <div class="g-ruleDiv" v-if="showRule">
+          <div class="c_main">
+            <div class="txtDiv">
+              <div class="t_title text-center txtBold">活动介绍</div>
+              <div class="d_info" v-html="ruleTxt">
+              </div>
+              <!-- <div class="b_btn" @click="closedPop">
+                <img src="images/pop_btn1.png" alt="">
+              </div> -->
+            </div>
+          </div>
+          <div class="cloesd" @click="closedPop">
+            <img src="images/newpop_closed.png" alt="">
+          </div>
+        </div>
+      </transition>
+
+      <!-- maskDiv -->
+
+      <div class="maskDiv" v-show="showMask">
+        &nbsp;
+      </div>
+
+      <!-- maskDiv end -->
+    </div>
+  </div>
+</body>
+
+</html>

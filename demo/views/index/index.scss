@@ -1,0 +1,349 @@
+@import "../../components/common/mixins.scss"; // common
+.c_main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.c_w100 {
+    width: 100%;
+}
+
+.c_w90 {
+    width: 90%;
+}
+
+.c_w80 {
+    width: 80%;
+}
+
+.c_w70 {
+    width: 70%;
+}
+
+.c_w50 {
+    width: 50%;
+}
+
+.c_mtauto {
+    margin: 0 auto;
+}
+
+.c_pt10 {
+    padding-top: ptr(20);
+}
+
+.c_pt5 {
+    padding-top: ptr(10);
+}
+
+.c_h100 {
+    height: 100%;
+}
+
+.stroke {
+    -webkit-text-stroke: ptr(1) $blue1;
+}
+
+.nopop {
+    input[type='checkbox'] {
+        width: ptr(16);
+        height: ptr(16);
+        vertical-align: middle;
+        margin-right: ptr(4);
+    }
+    color: red;
+    font-size: ptr(14)
+}
+
+// ---- 
+.index_main {
+    background: url('images/list_bg01.jpg') center top no-repeat;
+    background-size: 100% 100%;
+}
+
+// ----
+.loadpic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 41;
+    background: $blue1;
+}
+
+.g-title {
+    width: 100%;
+    padding-top: ptr(20);
+    height: ptr(140);
+    overflow: hidden;
+}
+
+.g-btnGroup {
+    position: absolute;
+    top: ptr(160);
+    width: 100%;
+    z-index: 38;
+    .btnBox {
+        width: ptr(80);
+    }
+}
+
+.g-middle {
+    // height: ptr(220);
+    max-height: ptr(240);
+    min-height: ptr(220);
+    overflow: hidden;
+}
+
+.g-nav {
+    // width: 80
+    .nav {
+        width: 32%;
+        min-width: ptr(70);
+        height: ptr(120);
+        padding: ptr(5);
+        background: url("images/icon_bg.png") top center no-repeat;
+        background-size: 100% 100%;
+        color: $txtColor;
+        span {
+            width: ptr(50);
+            height: ptr(66);
+            margin-top: ptr(10);
+            display: inline-block;
+        }
+    }
+}
+
+.g-selectDiv {
+    position: absolute;
+    z-index: 40;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $blue1;
+    padding-top: ptr(20);
+    .g-bd {
+        padding: ptr(10) auto;
+        height: 80%; // width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: ptr(30);
+    }
+    .selectPic {
+        padding: ptr(10);
+        img {
+            border-radius: ptr(4);
+            border: ptr(2) solid #6784fd;
+            &.on {
+                border-color: #fbd905;
+            }
+        }
+    }
+    .flex-center {
+        flex-wrap: wrap;
+    }
+}
+
+.g-rankDiv {
+    position: absolute;
+    z-index: 40;
+    width: 86%; // height: 90%;
+    min-height: 80%;
+    top: 10%;
+    left: 7%;
+    background: url("../index/images/rulebg.png") center no-repeat;
+    background-size: 100% 100%;
+    padding: ptr(14) ptr(10) ptr(10);
+    .rank-header {
+        height: ptr(40);
+        line-height: ptr(40);
+        font-size: ptr(16);
+        overflow: hidden;
+        border-bottom: 1px solid $blue1;
+    }
+    .rank-mine {
+        width: 90%;
+        margin: 0 auto;
+        height: ptr(80);
+        overflow: hidden;
+        border-bottom: 1px solid $blue1;
+    }
+    .mine-pic {
+        width: 40%;
+        float: left;
+        .userpic {
+            border: ptr(1) solid red;
+        }
+    }
+    .mine-info {
+        width: 50%;
+        float: left;
+        font-size: ptr(12);
+        color: #323232;
+    }
+    .rank-list {
+        width: 90%;
+        height: ptr(320);
+        min-height: ptr(300);
+        margin: ptr(6) auto;
+        overflow: hidden;
+        color: #323232;
+        ul {
+            width: 100%;
+            height: 90%;
+            overflow-y: auto;
+            padding-bottom: ptr(40);
+            li {
+                height: ptr(32);
+                line-height: ptr(32);
+                margin-top: ptr(6);
+                .userpic {
+                    width: ptr(30);
+                    height: ptr(30);
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.btn_rule {
+    width: ptr(90);
+    margin-top: ptr(90);
+}
+
+.g-ruleDiv {
+    position: absolute;
+    z-index: 40;
+    width: 90%;
+    height: 85%; // height: 100%;
+    top: 8%;
+    left: 5%; // overflow: hidden;
+    padding: ptr(14) ptr(10) ptr(10);
+    .txtDiv {
+        width: 100%;
+        height: 90%;
+        background: url("images/newpop.png") center no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+        .t_title {
+            margin-top: ptr(60);
+            font-size: ptr(17)
+        }
+        .d_info {
+            // padding: ptr(20) ptr(20) 0;
+            width: 85%;
+            margin: 0 auto;
+            height: 70%;
+            margin-bottom: ptr(10);
+            word-wrap: break-word;
+            overflow-y: auto; // color: $txtColor;
+            font-size: ptr(17)
+        }
+        .b_btn {
+            width: 60%;
+            margin: 0 auto;
+            height: ptr(30);
+        }
+    }
+}
+
+.c_list {
+    position: relative;
+    .listIcon {
+        background: url('images/list_btn_icon.png') center top no-repeat;
+        width: ptr(80);
+        height: ptr(90);
+        position: absolute;
+        right: 0%;
+        top: -38%;
+        background-size: 100% 100%;
+        z-index: 9;
+    }
+    ul {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: ptr(50);
+        position: relative;
+        z-index: 10;
+        li {
+            width: 96%;
+            margin: 0 auto;
+            margin-top: ptr(20);
+        }
+    }
+}
+
+.cloesd {
+    width: ptr(40);
+    height: ptr(40);
+    position: absolute;
+    right: 5%;
+    top: -3%;
+}
+
+.c_num {
+    width: ptr(48);
+}
+
+.c_pic {
+    width: ptr(56);
+}
+
+.list-header {
+    color: #323232;
+}
+
+.username {
+    font-size: ptr(14);
+    font-weight: bold;
+}
+
+.userpic {
+    width: 55%;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+        // width: 100%;
+        vertical-align: middle;
+    }
+}
+
+// fix iphone4
+@media (max-width: 320px) {
+    .page2 .d_title {
+        width: 25%;
+        height: 15%;
+    }
+}
+
+/*iPhoneX的适配*/
+
+@media only screen and (max-height: 723px) {
+    .page2 .d_wall {
+        padding-top: 24%;
+    }
+}
+
+@media only screen and (min-height: 723px) and (max-height: 725px) {
+    .page2 .d_wall {
+        padding-top: 28%;
+    }
+    .nav_main {
+        bottom: 6%;
+    }
+}
+
+/*iPhone8P的适配*/
+
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+    // header {
+    //     background-color: deepskyblue;
+    // }
+}

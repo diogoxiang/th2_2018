@@ -81,9 +81,9 @@ fis.th = function (options) {
 
 
     fis.match('**', {
-        useHash: false,
-        release: false
-    })
+            useHash: false,
+            release: false
+        })
         .match(/^\/(?!lib).*\/[^/]+\.js$/i, {
             // 设置js文件为babel解析，支持es6的写法。
             isJsLike: true,
@@ -136,7 +136,7 @@ fis.th = function (options) {
             },
         })
         .match('reset.(css|scss)', {
-            packOrder: -100//用来控制合并时的顺序，值越小越在前面。配合 packTo 一起使用。
+            packOrder: -100 //用来控制合并时的顺序，值越小越在前面。配合 packTo 一起使用。
         })
         .match(/^\/components\/widget\/.*\.(?:css|scss)$/i, {
             packOrder: 10
@@ -255,7 +255,7 @@ fis.th = function (options) {
     // ---oss版
     fis.media('prodoss')
         .match('/lib/**', {
-            domain: OPTIONS.domain
+            domain: OPTIONS.domain,
         })
         .match(/^\/(?!lib).*\/[^/]+\.js$/i, {
             useHash: true,
@@ -268,26 +268,28 @@ fis.th = function (options) {
                 compress: {
                     drop_console: true
                 }
-            })
+            }) 
 
         })
         .match(/\.(css|scss)$/i, {
             optimizer: plugin('clean-css')
         })
         .match('/modules/(**.css)', {
-            useHash: true
+            useHash: true,
+            url: OPTIONS.domain + '/static/$1'
         })
         .match(/\.png$/i, {
             optimizer: plugin('png-compressor')
         })
         .match(/.*?([^/]+\.(?:svg|tif|tiff|wbmp|png|bmp|fax|gif|ico|jfif|jpe|jpeg|jpg|woff|cur))$/, {
-            useHash: true
+            useHash: true 
         })
         .match(/^(?!.*tpl).*\/([^/]+\.html)$/i, {
             isProd: true,
         }).match('**', {
+            
             deploy: plugin('local-deliver', {
-                to: OPTIONS.deploy || OPTIONS.prodOss
+                to: OPTIONS.prodPloay || OPTIONS.prodOss
             })
         })
 

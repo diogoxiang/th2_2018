@@ -1,0 +1,44 @@
+<!--
+@require "debug.js"
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+<title>拼拼乐debug</title>
+    <link rel="import" href="../tpl/header/header.html?__inline">
+    <style>
+        html,
+        body {
+            height: 100%;
+            background: #fff;
+            -webkit-text-size-adjust: 100% !important;
+            position: relative;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" :style="{ height: screenH + 'px' }" v-cloak>
+        <div class="i5mt text-center">
+            加载中....
+        </div>
+        <!-- <div class="loadDiv text-center">
+      <p>加载中..{{process}}%</p>
+      <div class="prossDiv">
+        <div class="prossCon" :style="{ width: process+'%' }"></div>
+      </div>
+    </div> -->
+
+    </div>
+
+
+
+</body>
+
+</html>
