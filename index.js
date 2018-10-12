@@ -208,10 +208,30 @@ fis.th = function (options) {
             skipBuiltinModules: true
         });
 
+        // 替换插件资源路径插件
+        function replacer(opt) {
+            if (!Array.isArray(opt)) {
+                opt = [opt];
+            }
+            var r = [];
+            opt.forEach(function (raw) {
+                r.push(fis.plugin('replace', raw));
+            });
+            return r;
+        };
+        
     fis.match('**', {
-        deploy: plugin('local-deliver', {
-            to: OPTIONS.deploy
-        })
+        
+        // deploy: plugin('local-deliver', {
+        //     to: OPTIONS.deploy
+        // })
+         deploy: replacer([{
+             from: 'static/',
+             to: OPTIONS.domain + 'static/',
+         }]).concat(fis.plugin('local-deliver', {
+             to: OPTIONS.deploy
+         }))
+       
     });
 
 
@@ -275,8 +295,7 @@ fis.th = function (options) {
             optimizer: plugin('clean-css')
         })
         .match('/modules/(**.css)', {
-            useHash: true,
-            url: OPTIONS.domain + '/static/$1'
+            useHash: true
         })
         .match(/\.png$/i, {
             optimizer: plugin('png-compressor')
@@ -288,9 +307,16 @@ fis.th = function (options) {
             isProd: true,
         }).match('**', {
             
-            deploy: plugin('local-deliver', {
-                to: OPTIONS.prodPloay || OPTIONS.prodOss
-            })
+            // deploy: plugin('local-deliver', {
+            //     to: OPTIONS.prodPloay || OPTIONS.prodOss
+            // })
+
+            deploy: replacer([{
+                from: 'static/',
+                to: OPTIONS.domain + 'static/',
+            }]).concat(fis.plugin('local-deliver', {
+               to: OPTIONS.prodPloay || OPTIONS.prodOss
+            }))
         })
 
 };
