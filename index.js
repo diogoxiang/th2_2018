@@ -306,7 +306,6 @@ fis.th = function (options) {
         .match(/^(?!.*tpl).*\/([^/]+\.html)$/i, {
             isProd: true,
         }).match('**', {
-
             // deploy: plugin('local-deliver', {
             //     to: OPTIONS.prodPloay || OPTIONS.prodOss
             // })
@@ -319,7 +318,7 @@ fis.th = function (options) {
                 to: OPTIONS.ossDomain + 'lib/',
             }
             ]).concat(fis.plugin('local-deliver', {
-                to: OPTIONS.prodPloay || OPTIONS.prodOss
+                to: OPTIONS.prodPloay || OPTIONS.deploy
             }))
         })
 

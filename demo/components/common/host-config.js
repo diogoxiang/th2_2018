@@ -25,8 +25,8 @@ window.th = {
 }
 // 配置信息
 const HOST = {
-    port: "/",
-    // port: "http://ynyx.taiheiot.com/",
+    // port: "/",
+    port: "http://ynyx.taiheiot.com/",
     // port:"http://192.168.1.173:8087/",
     // port: "http://192.168.1.178:8087/",
     // port: "http://demo2.taiheiot.com/sz-api-webapp/",
