@@ -21,8 +21,8 @@ fis.th({
         urlPrefix: '' // 静态资源加载路径模式
     },
     base: ['views/setfont.js', 'lib/scrat/scrat.js', 'lib/diocss/dio.min.css'], // 所有页面都会加载的资源，可以是js，css
-    domain: 'https://xxc-oss.taiheiot.com/', // 配置共有静态资源域名
-    ossDomain:"", // OSS目录引用域名 可为空
+    domain: '', // 配置共有静态资源域名
+    ossDomain: "https://xxc-oss.taiheiot.com/v20181015/", // OSS目录引用域名 可为空
     version: '', // 版本号,可选
     deploy: 'F:\\github.com\\th2_2018\\dist', // 发布测试路径
     prodPloay: "F:\\github.com\\th2_2018\\distprod"

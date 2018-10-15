@@ -5,7 +5,7 @@
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define('lib/vue/vue', [], factory) :
+  typeof define === 'function' && define.amd ? define('https://xxc-oss.taiheiot.com/v20181015/lib/vue/vue', [], factory) :
   (global.Vue = factory());
 }(this, (function () { 'use strict';
 

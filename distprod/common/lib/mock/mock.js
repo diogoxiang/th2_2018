@@ -2,7 +2,7 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define('lib/mock/mock', [], factory);
+		define('https://xxc-oss.taiheiot.com/v20181015/lib/mock/mock', [], factory);
 	else if(typeof exports === 'object')
 		exports["Mock"] = factory();
 	else
@@ -8087,7 +8087,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    http://www.w3.org/TR/XMLHttpRequest2/
 
 	    参考实现：
-	    https://github.com/philikon/MockHttpRequest/blob/master/lib/mock.js
+	    https://github.com/philikon/MockHttpRequest/blob/master/https://xxc-oss.taiheiot.com/v20181015/lib/mock.js
 	    https://github.com/trek/FakeXMLHttpRequest/blob/master/fake_xml_http_request.js
 	    https://github.com/ilinsky/xmlhttprequest/blob/master/XMLHttpRequest.js
 	    https://github.com/firebug/firebug-lite/blob/master/content/lite/xhr.js

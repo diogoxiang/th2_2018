@@ -71,6 +71,7 @@ module.exports = function (ret, conf, settings, opt) {
             let _pkg = urlFile.map.pkg
             return relative(ret.map.pkg[_pkg].uri)
         } else {
+            // return urlFile.domain ? urlFile.domain + relative(urlFile.map.uri) : relative(urlFile.map.uri)
             return urlFile.domain ? urlFile.domain + urlFile.subpath : relative(urlFile.map.uri)
         }
     };

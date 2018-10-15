@@ -56,7 +56,17 @@ fis.config.set('settings.lint.jshint', {
 
 fis.config.set('modules.spriter', 'csssprites');
 
-
+// 替换插件资源路径插件
+function replacer(opt) {
+    if (!Array.isArray(opt)) {
+        opt = [opt];
+    }
+    var r = [];
+    opt.forEach(function (raw) {
+        r.push(fis.plugin('replace', raw));
+    });
+    return r;
+};
 
 fis.th = function (options) {
     var framework = {
@@ -208,30 +218,20 @@ fis.th = function (options) {
             skipBuiltinModules: true
         });
 
-        // 替换插件资源路径插件
-        function replacer(opt) {
-            if (!Array.isArray(opt)) {
-                opt = [opt];
-            }
-            var r = [];
-            opt.forEach(function (raw) {
-                r.push(fis.plugin('replace', raw));
-            });
-            return r;
-        };
-        
+
+
     fis.match('**', {
-        
-        // deploy: plugin('local-deliver', {
+
+        deploy: plugin('local-deliver', {
+            to: OPTIONS.deploy
+        })
+        // deploy: replacer([{
+        //     from: 'static/',
+        //     to: OPTIONS.domain + 'static/',
+        // }]).concat(fis.plugin('local-deliver', {
         //     to: OPTIONS.deploy
-        // })
-         deploy: replacer([{
-             from: 'static/',
-             to: OPTIONS.domain + 'static/',
-         }]).concat(fis.plugin('local-deliver', {
-             to: OPTIONS.deploy
-         }))
-       
+        // }))
+
     });
 
 
@@ -275,7 +275,7 @@ fis.th = function (options) {
     // ---oss版
     fis.media('prodoss')
         .match('/lib/**', {
-            domain: OPTIONS.domain,
+            // domain: OPTIONS.domain,
         })
         .match(/^\/(?!lib).*\/[^/]+\.js$/i, {
             useHash: true,
@@ -288,7 +288,7 @@ fis.th = function (options) {
                 compress: {
                     drop_console: true
                 }
-            }) 
+            })
 
         })
         .match(/\.(css|scss)$/i, {
@@ -301,21 +301,25 @@ fis.th = function (options) {
             optimizer: plugin('png-compressor')
         })
         .match(/.*?([^/]+\.(?:svg|tif|tiff|wbmp|png|bmp|fax|gif|ico|jfif|jpe|jpeg|jpg|woff|cur))$/, {
-            useHash: true 
+            useHash: true
         })
         .match(/^(?!.*tpl).*\/([^/]+\.html)$/i, {
             isProd: true,
         }).match('**', {
-            
+
             // deploy: plugin('local-deliver', {
             //     to: OPTIONS.prodPloay || OPTIONS.prodOss
             // })
-
+            // 增加OSS Domain Cdn前辍
             deploy: replacer([{
                 from: 'static/',
-                to: OPTIONS.domain + 'static/',
-            }]).concat(fis.plugin('local-deliver', {
-               to: OPTIONS.prodPloay || OPTIONS.prodOss
+                to: OPTIONS.ossDomain + 'static/',
+            }, {
+                from: 'lib/',
+                to: OPTIONS.ossDomain + 'lib/',
+            }
+            ]).concat(fis.plugin('local-deliver', {
+                to: OPTIONS.prodPloay || OPTIONS.prodOss
             }))
         })
 
