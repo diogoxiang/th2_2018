@@ -24,7 +24,7 @@ fis.th({
     domain: '', // 配置共有静态资源域名
     ossDomain: "https://xxc-oss.taiheiot.com/v20181015/", // OSS目录引用域名 可为空
     version: '', // 版本号,可选
-    deploy: 'F:\\github.com\\th2_2018\\dist', // 发布测试路径
-    prodPloay: "F:\\github.com\\th2_2018\\distprod"
+    deploy: 'F:\\Diogo\\github.com\\th2_2018\\dist', // 发布测试路径
+    prodPloay: "F:\\Diogo\\github.com\\th2_2018\\distprod"
     // prodPloay: 'F:\\Diogo\\tobaccoSvn\\201706_外_安徽中烟项目\\源代码\\trunk\\WEB_Front\\online' // 发布到生产路径
 })

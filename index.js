@@ -316,10 +316,15 @@ fis.th = function (options) {
             }, {
                 from: 'lib/',
                 to: OPTIONS.ossDomain + 'lib/',
-            }
-            ]).concat(fis.plugin('local-deliver', {
+            }]).concat(fis.plugin('local-deliver', {
                 to: OPTIONS.prodPloay || OPTIONS.deploy
+            })).concat(fis.plugin('obf', {
+                compact: false,
+                controlFlowFlattening: true
             }))
+
+
+
         })
 
 };
