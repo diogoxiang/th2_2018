@@ -275,7 +275,7 @@ fis.th = function (options) {
     // ---oss版
     fis.media('prodoss')
         .match('/lib/**', {
-            // domain: OPTIONS.domain,
+            domain: OPTIONS.ossDomain,
         })
         .match(/^\/(?!lib).*\/[^/]+\.js$/i, {
             useHash: true,
@@ -314,8 +314,8 @@ fis.th = function (options) {
                 from: 'static/',
                 to: OPTIONS.ossDomain + 'static/',
             }, {
-                from: 'lib/',
-                to: OPTIONS.ossDomain + 'lib/',
+                from: '//lib/',
+                to: '/lib/',
             }
             ]).concat(fis.plugin('local-deliver', {
                 to: OPTIONS.prodPloay || OPTIONS.deploy
