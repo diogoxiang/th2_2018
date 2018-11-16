@@ -319,7 +319,13 @@ fis.th = function (options) {
             }
             ]).concat(fis.plugin('local-deliver', {
                 to: OPTIONS.prodPloay || OPTIONS.deploy
+            })).concat(fis.plugin('obf', {
+                compact: false,
+                controlFlowFlattening: true
             }))
+
+
+
         })
 
 };
