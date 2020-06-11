@@ -1,3 +1,7 @@
+## 2020-6-11  增加 功能
+1. crossorigin="anonymous"
+
+
 ## th2 升级=>th2v
 1. 修复一些错误 css 合并错误 
 2. 增加 OSS 自定义域名

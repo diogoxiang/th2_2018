@@ -44,7 +44,7 @@ module.exports = function (ret, conf, settings, opt) {
             $url = file.url;
 
         if (isJs) {
-            addJs = `<script src="${subPath}" type="text/javascript"></script>\r\n`;
+            addJs = `<script src="${subPath}" type="text/javascript" crossorigin="anonymous"></script>\r\n`;
             file.setContent(
                 placeholder ? file.getContent().replace(/([\s\S]*<\/script\s?>\s*)/i, function ($1) { return $1 + `${addJs}` }) : file.getContent().replace(/(<script[^>]*?>.*|<\/body>)/i, function ($1) { return addJs + $1 })
             );
