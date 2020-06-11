@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-eslint": "^6.1.2",
-    "eslint": "^2.3.0",
+    "eslint": "^4.18.2",
     "fis-command-install": "^0.2.15",
     "fis-lint-jshint": "^0.0.10",
     "fis-lolcat": "^1.0.1",
